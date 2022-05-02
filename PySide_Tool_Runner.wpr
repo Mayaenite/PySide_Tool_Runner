@@ -1,0 +1,31 @@
+#!wing
+#!version=8.0
+##################################################################
+# Wing project file                                              #
+##################################################################
+[project attributes]
+console.toolbox = [{'autosave': False,
+                    'cmd': '$(WING:PYTHON) "%s"',
+                    'context': ('project',
+                                None),
+                    'env': ('merge',
+                            ['MAYA_PYTHON_VERSION = 3']),
+                    'id': 'cmd-6w7ED8gNPQ6UEvpC',
+                    'io_encoding': None,
+                    'key_binding': 'Ctrl-Alt-Shift-F6',
+                    'line_mode': True,
+                    'pseudo_tty': False,
+                    'pypath': ('project',
+                               []),
+                    'raise_panel': True,
+                    'rundir': ('project',
+                               ''),
+                    'shared': False,
+                    'title': 'Run Current File'}]
+proj.directory-list = [{'dirloc': loc('.'),
+                        'excludes': (),
+                        'filter': '*',
+                        'include_hidden': False,
+                        'recursive': True,
+                        'watch_for_changes': True}]
+proj.file-type = 'shared'
