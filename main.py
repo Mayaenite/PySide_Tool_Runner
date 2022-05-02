@@ -3,17 +3,18 @@ import os
 import sys
 import glob
 
+# Just Getting Directory Where This File Lives To Find Other Things 
 _this_dir = os.path.dirname(__file__)
 os.sys.path.append(str(_this_dir))
 
-# Code Path Collection
-_code_base_path = os.path.dirname(_this_dir)
-_code_base_name = os.path.basename(_code_base_path)
-
+# The Python Script That will run photoshop and add frames to each frame
 photoshop_prebuild_script  = os.path.join(_this_dir,"PhotoShop_Prep.py")
+# The Python Script That will run in nuke to turn the framed images into contact sheets
 nuke_build_script          = os.path.join(_this_dir,"Nuke_Contact_Sheet_Builder.py")
+# The Python Script That will run photoshop and generate a PDF from the contact sheets
 photoshop_PDF_Build_script = os.path.join(_this_dir,"PhotoShop_PDF_Build.py")
 
+# The hard coded path to the nuke exe the -t has been added so that it runs in python mode or as a councle
 nuke_cmd_exe = "C:/Program Files/Nuke12.2v3/Nuke12.2.exe -t "
 
 from PySide2 import QtCore, QtUiTools, QtWidgets
@@ -25,8 +26,8 @@ _UI_Loader = QtUiTools.QUiLoader()
 
 
 #----------------------------------------------------------------------
-def get_folder_Dialog(label="File Finder", UseNativeDialog=False, folder="", parent=None):
-	""""""
+def get_folder_Dialog(label="Folder Finder", UseNativeDialog=False, folder="", parent=None):
+	"""Opens up a dialog box to select a foulder"""
 	options = QtWidgets.QFileDialog.Options()
 	if not UseNativeDialog:
 		options |= QtWidgets.QFileDialog.DontUseNativeDialog
